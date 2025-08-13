@@ -1,0 +1,22 @@
+<div class="sidebar-container">
+  <div class="sidebar-header">
+    <h2>Folders</h2>
+    <button mat-icon-button color="primary" (click)="openCreateFolderDialog()">
+      <mat-icon>create_new_folder</mat-icon>
+    </button>
+  </div>
+
+  <mat-nav-list>
+    <a mat-list-item routerLink="/notes" [routerLinkActive]="['active']">
+      <mat-icon matListItemIcon>note</mat-icon>
+      <span matListItemTitle>All Notes</span>
+    </a>
+
+    <a mat-list-item *ngFor="let folder of folders" 
+       [routerLink]="['/folder', folder.id]" 
+       [routerLinkActive]="['active']">
+      <mat-icon matListItemIcon>folder</mat-icon>
+      <span matListItemTitle>{{ folder.name }}</span>
+    </a>
+  </mat-nav-list>
+</div>

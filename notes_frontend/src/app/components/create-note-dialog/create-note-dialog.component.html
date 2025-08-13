@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>Create New Note</h2>
+<mat-dialog-content>
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Title</mat-label>
+    <input matInput [(ngModel)]="title" placeholder="Enter note title">
+  </mat-form-field>
+  
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Content</mat-label>
+    <textarea matInput [(ngModel)]="content" placeholder="Enter note content" rows="6"></textarea>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onSubmit()" 
+          [disabled]="!title.trim() || !content.trim()">
+    Create
+  </button>
+</mat-dialog-actions>

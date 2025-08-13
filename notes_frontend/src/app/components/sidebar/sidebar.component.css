@@ -1,0 +1,31 @@
+.sidebar-container {
+  padding: 16px;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.sidebar-header h2 {
+  margin: 0;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.mat-nav-list {
+  padding-top: 0;
+}
+
+.mat-nav-list a.active {
+  background-color: rgba(25, 118, 210, 0.1);
+  color: var(--primary-color);
+}
+
+.mat-nav-list a:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}

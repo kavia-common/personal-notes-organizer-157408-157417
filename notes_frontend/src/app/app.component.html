@@ -1,3 +1,19 @@
-<div class="container">
-  <h1>{{ title }}</h1>
-</div>
+<mat-sidenav-container class="app-container">
+  <mat-sidenav mode="side" opened class="app-sidenav">
+    <app-sidebar></app-sidebar>
+  </mat-sidenav>
+  
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <mat-form-field appearance="outline" class="search-field">
+        <mat-label>Search notes</mat-label>
+        <input matInput [(ngModel)]="searchQuery" placeholder="Search notes...">
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+    </mat-toolbar>
+
+    <div class="content-container">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,32 @@
+<div class="note-list-container">
+  <div class="note-list-header">
+    <h2>Notes</h2>
+    <button mat-fab color="accent" (click)="openCreateNoteDialog()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+
+  <div class="notes-grid">
+    <mat-card *ngFor="let note of notes" class="note-card">
+      <mat-card-header>
+        <mat-card-title>{{ note.title }}</mat-card-title>
+        <mat-card-subtitle>
+          {{ note.updatedAt | date:'medium' }}
+        </mat-card-subtitle>
+      </mat-card-header>
+      
+      <mat-card-content>
+        <p>{{ note.content }}</p>
+      </mat-card-content>
+      
+      <mat-card-actions>
+        <button mat-icon-button color="primary">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="deleteNote(note.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
